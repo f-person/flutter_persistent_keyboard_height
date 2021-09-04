@@ -29,6 +29,25 @@ class FlutterPersistentKeyboardSizeExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    final keyboardHeight =
+        FlutterPersistentKeyboardSize.of(context).keyboardHeight;
+
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Flutter Persistent Keyboard Size Example',
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(keyboardHeight.toString()),
+        ],
+      ),
+    );
   }
 }

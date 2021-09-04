@@ -29,7 +29,7 @@ class _FlutterPersistentKeyboardSizeProviderState
     super.initState();
 
     widget.storageProvider.getHeight().then((value) {
-      if (value > 0 && _keyboardHeight > 0) {
+      if (value > 0 && _keyboardHeight < 1) {
         _keyboardHeight = value;
         if (mounted) setState(() {});
       }
