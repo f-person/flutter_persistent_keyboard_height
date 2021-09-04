@@ -1,4 +1,4 @@
-abstract class IPersistentKeyboardSizeStorageProvider {
+abstract class IPersistentKeyboardHeightStorageProvider {
   Future<void> setHeight(double height);
 
   Future<double> getHeight();

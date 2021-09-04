@@ -1,12 +1,12 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'i_persistent_keyboard_size_storage_provider.dart';
+import 'i_persistent_keyboard_height_storage_provider.dart';
 
 class SharedPreferencesPersistentKeyboardSizeStorageProvider
-    implements IPersistentKeyboardSizeStorageProvider {
+    implements IPersistentKeyboardHeightStorageProvider {
   const SharedPreferencesPersistentKeyboardSizeStorageProvider();
 
-  static const _heightKey = 'persistent_keyboard_size.height';
+  static const _heightKey = 'persistent_keyboard_height.height';
 
   @override
   Future<double> getHeight() async {

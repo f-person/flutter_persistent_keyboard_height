@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_persistent_keyboard_size/flutter_persistent_keyboard_size.dart';
+import 'package:flutter_persistent_keyboard_height/flutter_persistent_keyboard_height.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,20 +17,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FlutterPersistentKeyboardSizeProvider(
-        child: FlutterPersistentKeyboardSizeExample(),
+      home: const FlutterPersistentKeyboardHeightProvider(
+        child: FlutterPersistentKeyboardHeightExample(),
       ),
     );
   }
 }
 
-class FlutterPersistentKeyboardSizeExample extends StatelessWidget {
-  const FlutterPersistentKeyboardSizeExample({Key? key}) : super(key: key);
+class FlutterPersistentKeyboardHeightExample extends StatelessWidget {
+  const FlutterPersistentKeyboardHeightExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final keyboardHeight =
-        FlutterPersistentKeyboardSize.of(context).keyboardHeight;
+        FlutterPersistentKeyboardHeight.of(context).keyboardHeight;
 
     return Scaffold(
       body: Column(

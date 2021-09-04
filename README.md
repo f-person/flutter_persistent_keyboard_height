@@ -1,4 +1,4 @@
-# flutter_persistent_keyboard_size
+# flutter_persistent_keyboard_height
 
 A new Flutter package project.
 

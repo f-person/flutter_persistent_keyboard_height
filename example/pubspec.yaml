@@ -9,7 +9,7 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  flutter_persistent_keyboard_size:
+  flutter_persistent_keyboard_height:
     path: ../
   flutter:
     sdk: flutter

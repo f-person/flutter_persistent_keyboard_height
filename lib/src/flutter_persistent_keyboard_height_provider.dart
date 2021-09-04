@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_persistent_keyboard_size/flutter_persistent_keyboard_size.dart';
+import 'package:flutter_persistent_keyboard_height/flutter_persistent_keyboard_height.dart';
 
-import 'flutter_persistent_keyboard_size.dart';
-import 'shared_preferences_persistent_keyboard_size_storage_provider.dart';
+import 'flutter_persistent_keyboard_height.dart';
+import 'shared_preferences_persistent_keyboard_height_storage_provider.dart';
 
-class FlutterPersistentKeyboardSizeProvider extends StatefulWidget {
-  const FlutterPersistentKeyboardSizeProvider({
+class FlutterPersistentKeyboardHeightProvider extends StatefulWidget {
+  const FlutterPersistentKeyboardHeightProvider({
     required this.child,
     this.storageProvider =
         const SharedPreferencesPersistentKeyboardSizeStorageProvider(),
@@ -13,15 +13,15 @@ class FlutterPersistentKeyboardSizeProvider extends StatefulWidget {
   }) : super(key: key);
 
   final Widget child;
-  final IPersistentKeyboardSizeStorageProvider storageProvider;
+  final IPersistentKeyboardHeightStorageProvider storageProvider;
 
   @override
-  _FlutterPersistentKeyboardSizeProviderState createState() =>
-      _FlutterPersistentKeyboardSizeProviderState();
+  _FlutterPersistentKeyboardHeightProviderState createState() =>
+      _FlutterPersistentKeyboardHeightProviderState();
 }
 
-class _FlutterPersistentKeyboardSizeProviderState
-    extends State<FlutterPersistentKeyboardSizeProvider> {
+class _FlutterPersistentKeyboardHeightProviderState
+    extends State<FlutterPersistentKeyboardHeightProvider> {
   double _keyboardHeight = 0.0;
 
   @override
@@ -48,7 +48,7 @@ class _FlutterPersistentKeyboardSizeProviderState
       _keyboardHeight = bottomOffset;
     }
 
-    return FlutterPersistentKeyboardSize(
+    return FlutterPersistentKeyboardHeight(
       keyboardHeight: _keyboardHeight,
       child: widget.child,
     );
