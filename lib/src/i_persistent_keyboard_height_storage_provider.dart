@@ -19,7 +19,7 @@ import 'package:flutter_persistent_keyboard_height/src/shared_preferences_persis
 ///   Future<void> setHeight(double height) {
 ///     // save the height to storage
 ///   }
-// }
+/// }
 /// ```
 abstract class IPersistentKeyboardHeightStorageProvider {
   /// Save the height to storage.
