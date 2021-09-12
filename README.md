@@ -1,4 +1,4 @@
-# flutter_persistent_keyboard_height
+# flutter_persistent_keyboard_height [![Pub version](https://img.shields.io/pub/v/flutter_persistent_keyboard_height.svg)](https://pub.dev/packages/flutter_persistent_keyboard_height)
 
 Flutter package to get keyboard height. The height is persisted during app
 sessions and keyboard states (you can use the height when keyboard is closed).
