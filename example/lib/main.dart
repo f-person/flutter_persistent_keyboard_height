@@ -41,7 +41,7 @@ class FlutterPersistentKeyboardHeightExample extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Text(keyboardHeight.toString()),
+          Text('Keyboard height: $keyboardHeight'),
         ],
       ),
     );
