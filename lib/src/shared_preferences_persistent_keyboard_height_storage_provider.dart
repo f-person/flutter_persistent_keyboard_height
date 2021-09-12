@@ -2,6 +2,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'i_persistent_keyboard_height_storage_provider.dart';
 
+/// The default implementation for [IPersistentKeyboardHeightStorageProvider]
+/// that uses [SharedPreferences].
 class SharedPreferencesPersistentKeyboardSizeStorageProvider
     implements IPersistentKeyboardHeightStorageProvider {
   const SharedPreferencesPersistentKeyboardSizeStorageProvider();

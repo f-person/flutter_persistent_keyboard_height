@@ -36,7 +36,7 @@ class _FlutterPersistentKeyboardHeightProviderState
   /// Exposed via [FlutterPersistentKeyboardHeight.keyboardHeight].
   double _keyboardHeight = 0.0;
 
-  /// TODO: document the variable
+  /// Used in [_onWillShowKeyboard] for calling [_maybeSetKeyboardHeight].
   double _bottomOffset = 0.0;
 
   @override
@@ -64,6 +64,7 @@ class _FlutterPersistentKeyboardHeightProviderState
     super.dispose();
   }
 
+  /// The callback that is passed to [KeyboardListener] on [KeyboardUtils.add].
   void _onWillShowKeyboard(double height) {
     _keyboardHeightFromKeyboardUtils = height;
 
@@ -75,6 +76,9 @@ class _FlutterPersistentKeyboardHeightProviderState
     }
   }
 
+  /// Checks whether or not keyboard height should be updated  and
+  /// if so, updates the inherited widget and saves the height
+  /// via [widget.storageProvider].
   void _maybeSetKeyboardHeight({
     required double bottomOffset,
     required double keyboardHeightFromKeyboardUtils,
