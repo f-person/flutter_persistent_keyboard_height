@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FlutterPersistentKeyboardHeightProvider(
+    return const PersistentKeyboardHeightProvider(
       child: MaterialApp(
         title: 'Flutter Persistent Keyboard Height Example',
         home: FlutterPersistentKeyboardHeightExample(),
@@ -25,8 +25,7 @@ class FlutterPersistentKeyboardHeightExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final keyboardHeight =
-        FlutterPersistentKeyboardHeight.of(context).keyboardHeight;
+    final keyboardHeight = PersistentKeyboardHeight.of(context).keyboardHeight;
 
     return Scaffold(
       body: Column(

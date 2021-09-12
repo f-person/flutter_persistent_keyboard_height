@@ -3,11 +3,11 @@ import 'package:flutter_persistent_keyboard_height/flutter_persistent_keyboard_h
 import 'package:keyboard_utils/keyboard_listener.dart';
 import 'package:keyboard_utils/keyboard_utils.dart';
 
-import 'flutter_persistent_keyboard_height.dart';
+import 'persistent_keyboard_height.dart';
 import 'shared_preferences_persistent_keyboard_height_storage_provider.dart';
 
-class FlutterPersistentKeyboardHeightProvider extends StatefulWidget {
-  const FlutterPersistentKeyboardHeightProvider({
+class PersistentKeyboardHeightProvider extends StatefulWidget {
+  const PersistentKeyboardHeightProvider({
     required this.child,
     this.storageProvider =
         const SharedPreferencesPersistentKeyboardSizeStorageProvider(),
@@ -18,12 +18,12 @@ class FlutterPersistentKeyboardHeightProvider extends StatefulWidget {
   final IPersistentKeyboardHeightStorageProvider storageProvider;
 
   @override
-  _FlutterPersistentKeyboardHeightProviderState createState() =>
-      _FlutterPersistentKeyboardHeightProviderState();
+  _PersistentKeyboardHeightProviderState createState() =>
+      _PersistentKeyboardHeightProviderState();
 }
 
-class _FlutterPersistentKeyboardHeightProviderState
-    extends State<FlutterPersistentKeyboardHeightProvider> {
+class _PersistentKeyboardHeightProviderState
+    extends State<PersistentKeyboardHeightProvider> {
   final KeyboardUtils _keyboardUtils = KeyboardUtils();
 
   /// The ID we get when adding a listener to [_keyboardUtils] via
@@ -33,7 +33,7 @@ class _FlutterPersistentKeyboardHeightProviderState
   /// The value that we get from [KeyboardListener.willShowKeyboard].
   double _keyboardHeightFromKeyboardUtils = 0.0;
 
-  /// Exposed via [FlutterPersistentKeyboardHeight.keyboardHeight].
+  /// Exposed via [PersistentKeyboardHeight.keyboardHeight].
   double _keyboardHeight = 0.0;
 
   /// Used in [_onWillShowKeyboard] for calling [_maybeSetKeyboardHeight].
@@ -107,7 +107,7 @@ class _FlutterPersistentKeyboardHeightProviderState
       );
     }
 
-    return FlutterPersistentKeyboardHeight(
+    return PersistentKeyboardHeight(
       keyboardHeight: _keyboardHeight,
       child: widget.child,
     );

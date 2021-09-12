@@ -10,7 +10,7 @@ sessions and keyboard states (you can use the height when keyboard is closed).
 #### Registering the provider
 
 First thing you need to do is wrap a widget from children of which you want
-to get the keyboard height with `FlutterPersistentKeyboardHeightProvider`.
+to get the keyboard height with `PersistentKeyboardHeightProvider`.
 Wrap your app widget (perhaps `MaterialApp`) if you want to get keyboard height
 from all widgets.
 
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FlutterPersistentKeyboardHeightProvider(
+    return const PersistentKeyboardHeightProvider(
       child: MaterialApp(
         title: 'Flutter Persistent Keyboard Height Example',
-        home: FlutterPersistentKeyboardHeightExample(),
+        home: PersistentKeyboardHeightExample(),
       ),
     );
   }
@@ -31,12 +31,11 @@ class MyApp extends StatelessWidget {
 ```
 
 #### Getting the keyboard height
-In order to get keyboard height use the `FlutterPersistentKeyboardHeight`
+In order to get keyboard height use the `PersistentKeyboardHeight`
 inherited widget:
 ```dart
 Widget build(BuildContext context) {
-  final keyboardHeight =
-      FlutterPersistentKeyboardHeight.of(context).keyboardHeight;
+  final keyboardHeight = PersistentKeyboardHeight.of(context).keyboardHeight;
 
   return Scaffold(
     body: Column(
@@ -62,7 +61,7 @@ Widget build(BuildContext context) {
 By default, the package uses `shared_preferences` to preserve the keyboard
 height but if you want to use a custom solution for preserving the height
 you can do that by implementing the `IPersistentKeyboardHeightStorageProvider`
-interface and passing an instance of the class to `FlutterPersistentKeyboardHeightProvider`:
+interface and passing an instance of the class to `PersistentKeyboardHeightProvider`:
 ```dart
 class CustomPersistentKeyboardHeightStorageProvider
     implements IPersistentKeyboardHeightStorageProvider {
@@ -84,11 +83,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FlutterPersistentKeyboardHeightProvider(
+    return const PersistentKeyboardHeightProvider(
       storageProvider: CustomPersistentKeyboardHeightStorageProvider(),
       child: MaterialApp(
         title: 'Flutter Persistent Keyboard Height Example',
-        home: FlutterPersistentKeyboardHeightExample(),
+        home: PersistentKeyboardHeightExample(),
       ),
     );
   }
