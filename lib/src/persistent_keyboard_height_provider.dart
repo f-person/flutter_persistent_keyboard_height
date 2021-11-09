@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide KeyboardListener;
 import 'package:flutter_persistent_keyboard_height/flutter_persistent_keyboard_height.dart';
-import 'package:keyboard_utils/keyboard_listener.dart';
+import 'package:keyboard_utils/keyboard_listener.dart' as keyboard_utils;
 import 'package:keyboard_utils/keyboard_utils.dart';
 
 import 'persistent_keyboard_height.dart';
@@ -51,7 +51,9 @@ class _PersistentKeyboardHeightProviderState
     });
 
     _keyboardUtilsListenerId = _keyboardUtils.add(
-      listener: KeyboardListener(willShowKeyboard: _onWillShowKeyboard),
+      listener: keyboard_utils.KeyboardListener(
+        willShowKeyboard: _onWillShowKeyboard,
+      ),
     );
   }
 
