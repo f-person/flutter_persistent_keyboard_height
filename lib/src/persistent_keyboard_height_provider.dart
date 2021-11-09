@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide KeyboardListener;
+import 'package:flutter/material.dart';
 import 'package:flutter_persistent_keyboard_height/flutter_persistent_keyboard_height.dart';
 import 'package:keyboard_utils/keyboard_listener.dart' as keyboard_utils;
 import 'package:keyboard_utils/keyboard_utils.dart';
@@ -30,7 +30,8 @@ class _PersistentKeyboardHeightProviderState
   /// [KeyboardUtils.add]. Used in [dispose] to remove the listener.
   int? _keyboardUtilsListenerId;
 
-  /// The value that we get from [KeyboardListener.willShowKeyboard].
+  /// The value that we get from
+  /// [keyboard_utils.KeyboardListener.willShowKeyboard].
   double _keyboardHeightFromKeyboardUtils = 0.0;
 
   /// Exposed via [PersistentKeyboardHeight.keyboardHeight].
@@ -66,7 +67,8 @@ class _PersistentKeyboardHeightProviderState
     super.dispose();
   }
 
-  /// The callback that is passed to [KeyboardListener] on [KeyboardUtils.add].
+  /// The callback that is passed to [keyboard_utils.KeyboardListener]
+  /// on [KeyboardUtils.add].
   void _onWillShowKeyboard(double height) {
     _keyboardHeightFromKeyboardUtils = height;
 
