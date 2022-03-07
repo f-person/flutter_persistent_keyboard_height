@@ -1,3 +1,7 @@
+## 1.0.3
+
+Replace a package import to a relative import.
+
 ## 1.0.2
 
 Change the license to MIT.
