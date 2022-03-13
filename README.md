@@ -11,8 +11,8 @@ sessions and keyboard states (you can use the height when keyboard is closed).
 
 First thing you need to do is wrap a widget from children of which you want
 to get the keyboard height with `PersistentKeyboardHeightProvider`.
-Wrap your app widget (perhaps `MaterialApp`) if you want to get keyboard height
-from all widgets.
+Add it to the `builder` of your app widget (perhaps `MaterialApp`) if you
+want to get keyboard height from all widgets.
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -20,10 +20,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PersistentKeyboardHeightProvider(
-      child: MaterialApp(
-        title: 'Flutter Persistent Keyboard Height Example',
-        home: PersistentKeyboardHeightExample(),
+    return MaterialApp(
+      title: 'Flutter Persistent Keyboard Height Example',
+      home: const FlutterPersistentKeyboardHeightExample(),
+      builder: (context, child) => PersistentKeyboardHeightProvider(
+        child: child!,
       ),
     );
   }
@@ -83,11 +84,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PersistentKeyboardHeightProvider(
-      storageProvider: CustomPersistentKeyboardHeightStorageProvider(),
-      child: MaterialApp(
-        title: 'Flutter Persistent Keyboard Height Example',
-        home: PersistentKeyboardHeightExample(),
+    return MaterialApp(
+      title: 'Flutter Persistent Keyboard Height Example',
+      home: const FlutterPersistentKeyboardHeightExample(),
+      builder: (context, child) => PersistentKeyboardHeightProvider(
+        child: child!,
       ),
     );
   }

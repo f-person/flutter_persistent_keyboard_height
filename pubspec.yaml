@@ -1,6 +1,6 @@
 name: flutter_persistent_keyboard_height
 description: Flutter package to get keyboard height. Can be used to display a sticker/emoji modal with correct height.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/f-person/flutter_persistent_keyboard_height
 repository: https://github.com/f-person/flutter_persistent_keyboard_height
 

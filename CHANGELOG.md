@@ -1,3 +1,7 @@
+## 1.0.5
+
+Fix examples in README.
+
 ## 1.0.4
 
 Fix "No MediaQuery widget ancestor found" error in the example.
