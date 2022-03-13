@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PersistentKeyboardHeightProvider(
-      child: MaterialApp(
-        title: 'Flutter Persistent Keyboard Height Example',
-        home: FlutterPersistentKeyboardHeightExample(),
+    return MaterialApp(
+      title: 'Flutter Persistent Keyboard Height Example',
+      home: const FlutterPersistentKeyboardHeightExample(),
+      builder: (context, child) => PersistentKeyboardHeightProvider(
+        child: child!,
       ),
     );
   }
